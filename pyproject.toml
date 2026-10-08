@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-whiteboard"
+version = "1.0.0"
+description = "A live, hand-drawn whiteboard that AIs draw on while you watch: MCP server, HTTP API and browser viewer."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["ai", "llm", "mcp", "whiteboard", "claude", "agents", "visualization", "hand-drawn"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/alby13/AI-Whiteboard"
+
+[project.scripts]
+ai-whiteboard = "whiteboard.__main__:main"
+ai-whiteboard-mcp = "whiteboard.mcp_server:main"
+
+[tool.setuptools.packages.find]
+include = ["whiteboard*"]
+
+[tool.setuptools.package-data]
+whiteboard = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

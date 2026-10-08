@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "whiteboard": {
+      "command": "python",
+      "args": ["-m", "whiteboard", "mcp"]
+    }
+  }
+}
